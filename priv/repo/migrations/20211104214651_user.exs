@@ -11,9 +11,5 @@ defmodule FinalProject.Repo.Migrations.User do
       add :player_style, :string, null: true
       timestamps()
     end
-
-    alter table("games") do
-      add :user_id, references("users")
-    end
   end
 end
