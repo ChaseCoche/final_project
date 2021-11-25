@@ -8,19 +8,18 @@ defmodule FinalProject.User do
     field :name,  :string
     field :password, :string, virtual: true
     field :password_hash, :string
-    field :player_style,  Ecto.Enum, values: []
-    field :game_style,    Ecto.Enum, values: [:fps, :moba, :racing ]
+    field :game_style,    Ecto.Enum, values: [:fps, :moba, :racing, :fighting]
     timestamps()
   end
 
   def changeset(%__MODULE__{}=user, attrs) do
     user
-    |>  cast(attrs, [:email,:name,:password])
+    |>  cast(attrs, [:email,:name,:password, :game_style])
   end
 
   def create_changeset(%__MODULE__{} = user, attrs) do
     user
-    |> cast(attrs, [:email,:name,:password])
+    |> cast(attrs, [:email,:name,:password, :game_style])
     |> validate_required([:email,:name,:password])
     |> validate_length(:password, min: 8)
     |> validate_format(:email, ~r/@/)

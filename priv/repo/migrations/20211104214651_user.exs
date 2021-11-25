@@ -7,8 +7,7 @@ defmodule FinalProject.Repo.Migrations.User do
       add :email, :string, null: false
       # Use BCrypt
       add :password_hash, :string, null: false
-      add :game_style, :string, null: true
-      add :player_style, :string, null: true
+      add :game_style, :string
       timestamps()
     end
   end
