@@ -16,9 +16,11 @@ defmodule FinalProjectWeb.Router do
 
   scope "/", FinalProjectWeb do
     pipe_through :browser
-
     get "/", PageController, :index
+    get "/dashboard", DashboardController, :index
   end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", FinalProjectWeb do
@@ -37,7 +39,7 @@ defmodule FinalProjectWeb.Router do
 
     scope "/" do
       pipe_through :browser
-      live_dashboard "/dashboard", metrics: FinalProjectWeb.Telemetry
+      live_dashboard "/phxdashboard", metrics: FinalProjectWeb.Telemetry
     end
   end
 
