@@ -2,13 +2,14 @@ defmodule FinalProject.User do
   use Ecto.Schema
   import Ecto.Changeset
   alias Bcrypt
-
+  alias FinalProject.Game
   schema "users" do
     field :email, :string
     field :name,  :string
     field :password, :string, virtual: true
     field :password_hash, :string
     field :game_style,    Ecto.Enum, values: [:fps, :moba, :racing, :fighting]
+    has_many :games, Game
     timestamps()
   end
 

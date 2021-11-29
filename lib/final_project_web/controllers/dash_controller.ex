@@ -1,4 +1,4 @@
-defmodule FinalProjectWeb.DashboardController do
+defmodule FinalProjectWeb.DashController do
   use FinalProjectWeb, :controller
 
   def index(conn, _params) do

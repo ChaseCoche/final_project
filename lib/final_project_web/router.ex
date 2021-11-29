@@ -17,7 +17,7 @@ defmodule FinalProjectWeb.Router do
   scope "/", FinalProjectWeb do
     pipe_through :browser
     get "/", PageController, :index
-    get "/dashboard", DashboardController, :index
+    get "/dash", DashController, :index
   end
 
 

@@ -12,11 +12,8 @@ defmodule FinalProject.Accounts do
 
   def get(id) do
     User
-    |> Repo.get(id)
-    |> Repo.preload([:guests])
+    |> Repo.get(User.id)
   end
-
-
 
 
 end
