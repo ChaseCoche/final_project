@@ -18,6 +18,8 @@ defmodule FinalProjectWeb.Router do
     pipe_through :browser
     get "/", PageController, :index
     get "/dash", DashController, :index
+    get "/session/new", SessionController, :new
+    post "/session", SessionController, :create
   end
 
 

@@ -12,8 +12,10 @@ defmodule FinalProject.Accounts do
 
   def get(id) do
     User
-    |> Repo.get(User.id)
+    |> Repo.get(id)
+    |> Repo.preload([:games])
   end
+
 
 
 end
