@@ -1,0 +1,26 @@
+<%= form_for @conn, Routes.dash_path(@conn, :create_account), [as: :dash], fn f -> %>
+    <label style="text-align:center">Email:</label>
+    <%= text_input f, :email %>
+
+    <label style="text-align:center">Password:</label>
+    <%= password_input f, :password %>
+
+    <label style="text-align:center">Name:</label>
+    <%= text_input f, :name %>
+
+    <label for="game_style">Game Style:</label>
+
+    <select name="game_style" id="game_style">
+        <option value="fps">FPS</option>
+        <option value="moba">MOBA</option>
+        <option value="racing">Racing</option>
+        <option value="fighting">Fighting</option>
+        <%= text_input f, :game_style %>
+    </select>
+    
+    
+    
+    <div class="flex-parent jc-center">
+        <button type="submit">Create</button>
+    </div>
+<% end %> 

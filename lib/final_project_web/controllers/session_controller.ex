@@ -1,7 +1,7 @@
 defmodule FinalProjectWeb.SessionController do
   use FinalProjectWeb, :controller
   alias FinalProject.Accounts.UserAuth
-  alias FinalProject.User
+  alias FinalProject.{User,Accounts}
 
   def new(conn, _param) do
     render(conn, "new.html")
@@ -21,4 +21,13 @@ defmodule FinalProjectWeb.SessionController do
         |> render("new.html")
     end
   end
+
+  def create_account(
+    %{"email" => _email, "name" => _name, "password" => _password, "game_style" => _game_style} = params
+      ) do
+    Accounts.create(params)
+
+    render("new.html")
+  end
+
 end

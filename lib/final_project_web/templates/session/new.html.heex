@@ -1,9 +1,19 @@
 <%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
-    <label>Email: </label>
+    <label style="text-align:center">Email: </label>
     <%= text_input f, :email %>
 
-    <label>Password: </label>
+    <label style="text-align:center">Password: </label>
     <%= password_input f, :password %>
 
-    <%= submit "Login" %>
+    
+    
+    <div class="flex-parent jc-center">
+        <button type="submit">Login</button>
+    </div>
 <% end %> 
+
+    <div class="flex-parent jc-center">
+        <form method="get" action="/createaccount">
+            <button type="submit">Create New Account</button>
+        </form>
+    </div>

@@ -11,4 +11,16 @@ defmodule FinalProjectWeb.DashController do
     {:ok, id} = Phoenix.Token.verify(FinalProjectWeb.Endpoint, "randomized_salt", token)
     assign(conn, :authenticated_user, Accounts.get(id))
     end
+
+
+
+
+
+  def create_account(
+    %{"email" => _email, "name" => _name, "password" => _password, "game_style" => _game_style} = params
+      ) do
+    Accounts.create(params)
+
+    render("new.html")
   end
+end
