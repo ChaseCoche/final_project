@@ -17,9 +17,15 @@ defmodule FinalProjectWeb.Router do
   scope "/", FinalProjectWeb do
     pipe_through :browser
     get "/", PageController, :index
+    delete "/session", SessionController, :delete
     get "/dash", DashController, :index
+    get "/users", UsersController, :new
+    post "/users", UsersController, :create
     get "/session/new", SessionController, :new
     post "/session", SessionController, :create
+
+
+
   end
 
 

@@ -1,4 +1,4 @@
-<%= form_for @conn, Routes.dash_path(@conn, :create_account), [as: :dash], fn f -> %>
+<%= form_for @conn, Routes.users_path(@conn, :create), [as: :users], fn f -> %>
     <label style="text-align:center">Email:</label>
     <%= text_input f, :email %>
 
@@ -10,12 +10,11 @@
 
     <label for="game_style">Game Style:</label>
 
-    <select name="game_style" id="game_style">
+    <select name="users[game_style]" id="users_game_style">
         <option value="fps">FPS</option>
         <option value="moba">MOBA</option>
         <option value="racing">Racing</option>
         <option value="fighting">Fighting</option>
-        <%= text_input f, :game_style %>
     </select>
     
     

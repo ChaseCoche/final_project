@@ -23,6 +23,9 @@
         <a href="https://phoenixframework.org/" class="phx-logo">
           <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
         </a>
+          <%= if is_signed_in?(@conn) do %>
+                  <li><%= link "Sign out", to: Routes.session_path(@conn, :delete), method: :delete %></li>
+          <% end %>
       </section>
     </header>
     <%= @inner_content %>
