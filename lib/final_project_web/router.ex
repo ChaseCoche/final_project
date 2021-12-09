@@ -18,11 +18,16 @@ defmodule FinalProjectWeb.Router do
     pipe_through :browser
     get "/", PageController, :index
     delete "/session", SessionController, :delete
-    get "/dash", DashController, :index
+    #get "/dash", DashController, :index
     get "/users", UsersController, :new
     post "/users", UsersController, :create
+    #get "/dash/:id/edit", DashController, :renedit
+    #post "/dash/:id", DashController, :edit
+    #patch "/dash/:id", DashController, :edit
+    #put "/dash/:id", DashController, :edit
     get "/session/new", SessionController, :new
     post "/session", SessionController, :create
+    resources "/dash", DashController
   end
 
   # Other scopes may use custom stacks.

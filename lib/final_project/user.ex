@@ -31,6 +31,15 @@ defmodule FinalProject.User do
     |> unique_constraint(:email)
   end
 
+  def update_changeset(user,attrs \\ %{}) do
+    user
+    |> cast(attrs, [:name, :password, :game_style])
+    |> validate_required([:name, :password])
+    |> validate_length(:password, min: 8)
+    |> put_hash()
+
+  end
+
   defp put_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
     put_change(changeset, :password_hash, Bcrypt.hash_pwd_salt(password))
   end

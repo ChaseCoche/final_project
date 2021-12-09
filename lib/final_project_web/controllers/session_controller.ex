@@ -5,7 +5,7 @@ defmodule FinalProjectWeb.SessionController do
 
   def new(conn, _param) do
     # Pass a changeset with no data to use in the form for validation data.
-    render(conn, "new.html", changeset: User.create_changeset(%User{}, %{}))
+    render(conn, "new.html")
   end
 
   def create(conn, %{"session" => %{"email" => email, "password" => password}}) do
@@ -25,8 +25,7 @@ defmodule FinalProjectWeb.SessionController do
 
   def delete(conn, _params) do
     conn
-    |> clear_session()
-    |> render("new.html")
+    |> redirect(to: Routes.session_path(conn, :new))
     |> halt()
   end
 end

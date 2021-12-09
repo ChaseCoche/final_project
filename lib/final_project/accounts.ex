@@ -17,4 +17,11 @@ defmodule FinalProject.Accounts do
     |> Repo.get(id)
     |> Repo.preload([:games])
   end
+
+  def update(user, attrs) do
+    user
+    |> User.update_changeset(attrs)
+    |> Repo.update!()
+  end
+
 end

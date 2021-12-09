@@ -1,14 +1,12 @@
+<%= form_for @changeset, Routes.dash_path(@conn, :edit, @id), fn f -> %>
+    <label style="text-align:center">Email:<%=@account.email%></label>
 
-
-<%= form_for @conn, Routes.users_path(@conn, :create), [as: :users], fn f -> %>
-    <label style="text-align:center">Email:</label>
-    <%= text_input f, :email %>
     
     <label style="text-align:center">Password:</label>
     <%= password_input f, :password %>
     
     <label style="text-align:center">Name:</label>
-    <%= text_input f, :name %>
+    <%= text_input f, :name, placeholder: @account.name %>
     
     <label for="game_style">Game Style:</label>
 
@@ -22,6 +20,6 @@
     
     
     <div class="flex-parent jc-center">
-        <button type="submit">Create</button>
+        <button type="submit">Update</button>
     </div>
 <% end %> 

@@ -1,6 +1,6 @@
-<%= form_for @changeset, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
+<%= form_for @conn, Routes.session_path(@conn, :create), [as: :session], fn f -> %>
     <label style="text-align:center">Email: </label>
-    <%= ValidInputs.text_input f, :email %>
+    <%= text_input f, :email %>
 
     <label style="text-align:center">Password: </label>
     <%= password_input f, :password %>
