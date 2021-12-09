@@ -24,7 +24,6 @@ defmodule FinalProject.Accounts.UserAuth do
     end
   end
 
-
   defp password_matches?(password, password_hash) do
     Bcrypt.verify_pass(password, password_hash)
   end

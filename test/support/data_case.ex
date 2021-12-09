@@ -27,7 +27,6 @@ defmodule FinalProject.DataCase do
     end
   end
 
-
   setup tags do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(FinalProject.Repo)
 
@@ -38,12 +37,11 @@ defmodule FinalProject.DataCase do
     :ok
   end
 
-
-  #setup tags do
-   # pid = Ecto.Adapters.SQL.Sandbox.start_owner!(FinalProject.Repo, shared: not tags[:async])
-    #on_exit(fn -> Ecto.Adapters.SQL.Sandbox.stop_owner(pid) end)
-    #:ok
-  #end
+  # setup tags do
+  # pid = Ecto.Adapters.SQL.Sandbox.start_owner!(FinalProject.Repo, shared: not tags[:async])
+  # on_exit(fn -> Ecto.Adapters.SQL.Sandbox.stop_owner(pid) end)
+  # :ok
+  # end
 
   @doc """
   A helper that transforms changeset errors into a map of messages.

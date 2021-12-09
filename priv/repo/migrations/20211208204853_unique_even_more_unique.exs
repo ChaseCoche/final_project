@@ -3,6 +3,7 @@ defmodule FinalProject.Repo.Migrations.UniqueEvenMoreUnique do
 
   def change do
     execute "CREATE EXTENSION citext", "DROP EXTENSION citext"
+
     alter table(:users) do
       modify :email, :citext, null: false
     end

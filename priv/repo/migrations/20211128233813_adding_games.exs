@@ -1,4 +1,4 @@
-defmodule FinalProject.Repo.Migrations.AddingGames  do
+defmodule FinalProject.Repo.Migrations.AddingGames do
   use Ecto.Migration
 
   def change do

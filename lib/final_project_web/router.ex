@@ -23,12 +23,7 @@ defmodule FinalProjectWeb.Router do
     post "/users", UsersController, :create
     get "/session/new", SessionController, :new
     post "/session", SessionController, :create
-
-
-
   end
-
-
 
   # Other scopes may use custom stacks.
   # scope "/api", FinalProjectWeb do

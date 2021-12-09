@@ -22,13 +22,10 @@ defmodule FinalProjectWeb.SessionController do
     end
   end
 
-
-
   def delete(conn, _params) do
     conn
     |> clear_session()
     |> render("new.html")
     |> halt()
   end
-
 end

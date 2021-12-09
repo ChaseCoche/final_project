@@ -8,5 +8,4 @@ defmodule FinalProject.Library do
     |> Game.changeset(attrs)
     |> Repo.insert!()
   end
-
 end

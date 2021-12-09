@@ -17,6 +17,16 @@ defmodule FinalProjectWeb.ErrorHelpers do
     end)
   end
 
+  def error_for(%{errors: errors} = _changeset, field) do
+    case Keyword.get(errors, field, nil) do
+      {msg, _} ->
+        msg
+
+      nil ->
+        nil
+    end
+  end
+
   @doc """
   Translates an error message using gettext.
   """
