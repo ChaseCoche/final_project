@@ -27,21 +27,17 @@ defmodule FinalProjectWeb do
     end
   end
 
-
   def view do
     quote do
-      use Phoenix.View, root: "lib/final_project_web/templates",
-      namespace: FinalProjectWeb
+      use Phoenix.View,
+        root: "lib/final_project_web/templates",
+        namespace: FinalProjectWeb
+
       # Import convenience functions from controllers
       import Phoenix.Controller,
         only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
 
-      # vvvv BEGIN OUR CODE vvvv
-      import Phoenix.HTML.Form, except: [number_input: 2, number_input: 3, text_input: 3]
-      import FinalProjectWeb.ValidInputs
-      # ^^^^ END OUR CODE ^^^^
+      alias FinalProjectWeb.ValidInputs
 
       import FinalProjectWeb.Router.Helpers
       import FinalProjectWeb.ErrorHelpers
