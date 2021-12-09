@@ -23,6 +23,8 @@ defmodule FinalProject.User do
     user
     |> cast(attrs, [:email, :name, :password, :game_style])
     |> validate_required([:email, :name, :password])
+    # This is just added to show that the input validation is added.
+    |> validate_length(:email, min: 6)
     |> validate_length(:password, min: 8)
     |> validate_format(:email, ~r/@/)
     |> put_hash()

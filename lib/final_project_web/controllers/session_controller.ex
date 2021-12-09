@@ -4,7 +4,8 @@ defmodule FinalProjectWeb.SessionController do
   alias FinalProject.User
 
   def new(conn, _param) do
-    render(conn, "new.html")
+    # Pass a changeset with no data to use in the form for validation data.
+    render(conn, "new.html", changeset: User.create_changeset(%User{}, %{}))
   end
 
   def create(conn, %{"session" => %{"email" => email, "password" => password}}) do
