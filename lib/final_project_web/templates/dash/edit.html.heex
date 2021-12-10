@@ -2,13 +2,13 @@
     <label style="text-align:center">Email:<%=@account.email%></label>
 
     
-    <label style="text-align:center">Password:</label>
+    <%= label f, :password %>
     <%= password_input f, :password %>
     
-    <label style="text-align:center">Name:</label>
+    <%= label f, :name %>
     <%= text_input f, :name, placeholder: @account.name %>
     
-    <label for="game_style">Game Style:</label>
+    <%= label f, :game_style %>
 
     <select name="users[game_style]" id="users_game_style">
         <option value="fps">FPS</option>

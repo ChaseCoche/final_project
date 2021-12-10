@@ -1,7 +1,7 @@
 <h1 style="text-align:center"><%= @account.name %> is succesfully logged in!</h1>
     <div class="flex-parent jc-center">
-        
-        <form method="get" action="/dash/edit">
-            <button type="submit">Edit your account</button>
-        </form>
+        <%= user_view with_edit_link(@conn, @account) %>   
+    </div>
+    <div class="flex-parent jc-center">
+        <p> Your Account! </p>   
     </div>
